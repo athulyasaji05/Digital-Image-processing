@@ -1,0 +1,21 @@
+a = imread('cameraman.tif');
+b = a;
+c = randi([0, 1], 256, 256, 'uint8');
+b = imresize(b, [256, 256]);
+
+for i = 1:256
+    for j = 1:256
+        p = b(i, j);
+        p = bitset(p, 1, c(i, j));
+        b(i, j) = p;
+    end
+end
+
+figure;
+subplot(1, 2, 1);
+imshow(a);
+title('Original Image');
+
+subplot(1, 2, 2);
+imshow(b);
+title('Implementation of LSB');
