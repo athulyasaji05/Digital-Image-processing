@@ -1,0 +1,9 @@
+
+originalImage = imread('cameraman.tif');
+negativeImage = 255 - originalImage;
+subplot(2,1,1);
+imshow(originalImage);
+title('Original Image');
+subplot(2,1,2);
+imshow(negativeImage);
+title('Negative Image');
